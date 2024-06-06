@@ -21,6 +21,7 @@ import reportWebVitals from './reportWebVitals';
 import { ProductProvider } from './Components/Pages/Medicines/ProductContext/ProductContext.tsx';
 import Products from './Components/Pages/Medicines/Products.tsx';
 import MedWishList from './Components/Pages/Medicines/ProductItem/ProductWishList.tsx';
+import Payment from './Components/Pages/Payment/Payment.tsx';
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <CheckoutPage></CheckoutPage>
+            },
+            {
+                path: '/payment',
+                element: <Payment></Payment>
             }
         ]
     },

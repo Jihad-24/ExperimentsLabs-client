@@ -5,15 +5,15 @@ import cashon from '../../../../assets/Images/cash-delivery.png';
 import freeDelivary from '../../../../assets/Images/free-delivery.png';
 import hotDeals from '../../../../assets/Images/hot-deals.png';
 import installment from '../../../../assets/Images/installments.png';
-// import verified from '../../../../assets/Images/verified.png';
-import verified from '../../../../assets/2.png';
+import verified from '../../../../assets/Images/verified.png';
+// import verified from '../../../../assets/2.png';
 const SideContent = () => {
     const [Products, setProducts] = useState([]);
     const [isLoading, setISLoading] = useState(true);
 
     useEffect(() => {
         setISLoading(true);
-        fetch('https://medcarehubserverwebsite.vercel.app/Medicines')
+        fetch('http://localhost:5001/products')
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data);
@@ -90,11 +90,11 @@ const SideContent = () => {
             </div>
 
             <div className="mx-2 space-y-3">
-                <h1 className="text-xl">Category</h1>
+                <h1 className="text-xl">Category's</h1>
                 <hr />
                 <ul className="text-[#2E2E2E] opacity-85">
                     {!isLoading ? (
-                        Array.from(new Set(Products?.map((Product) => Product.Category))).map((category) => (
+                        Array.from(new Set(Products?.map((Product) => Product.category))).map((category) => (
                             <li className="hover:text-[#0360D9] cursor-pointer" key={category} value={category}>
                                 {category}
                             </li>

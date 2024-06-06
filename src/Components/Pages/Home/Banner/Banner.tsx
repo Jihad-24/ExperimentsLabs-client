@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div className="mb-[110px] bg-[#E1EEFF]">
             <Container>
-                <div className="lg:flex justify-around relative items-center ">
+                <div className="lg:flex justify-around relative items-center pb-5 gap-5">
                     <div className="px-1 md:px-5 lg:px-0">
                         <h1 className="lg:text-6xl mb-3 text-3xl font-bold">
                             Find & Search Your <br />
@@ -13,7 +13,7 @@ const Banner = () => {
                         </h1>
                         <p className="mb-5">
                             {' '}
-                            ExperimentsLabs is one of the largest medical store that provides Products on prescription & <br /> OTC. Order Product online & get fastest delivery in your city.
+                            ExperimentsLabs is one of the largest e home decor store that provides Products on prescription & <br /> OTC. Order Product online & get fastest delivery in your city.
                         </p>
                         <div className="flex gap-1 md:gap-6">
                             <button  className="btn bg-[#0360D9] hover:bg-[#0360D9] text-white">
@@ -24,7 +24,7 @@ const Banner = () => {
                     </div>
 
                     <div>
-                        <img className=" w-[798px]  h-auto" src="/Asset/Banner/banner.png" alt="" />
+                        <img className=" w-[798px]  h-auto border border-[#0360D9] rounded-md" src="/Asset/Banner/istockphoto-1190440285-612x612.jpg" alt="" />
                     </div>
                 </div>
             </Container>
@@ -37,12 +37,12 @@ const Banner = () => {
                         </div>
                         <div>
                             <h1 className="lg:text-6xl text-xl font-bold">100+ </h1>
-                            <p>Doctors</p>
+                            <p>Home Decor</p>
                         </div>
 
                         <div>
                             <h1 className="lg:text-6xl text-xl font-bold">1M+</h1>
-                            <p>Active Patients</p>
+                            <p>Active Order's</p>
                         </div>
                     </div>
                 </Container>

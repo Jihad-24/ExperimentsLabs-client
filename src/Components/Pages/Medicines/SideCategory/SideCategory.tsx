@@ -9,9 +9,9 @@ const SideCategory = ({ filter, setFilter }) => {
     const AxiousPublic = UseAxiosPublic();
 
     const { data: ProductData = [], isLoading } = useQuery({
-        queryKey: ['Medicines'],
+        queryKey: ['products'],
         queryFn: async () => {
-            const result = await AxiousPublic.get('/Medicines');
+            const result = await AxiousPublic.get('/products');
             return result.data;
         }
     });
@@ -43,7 +43,7 @@ const SideCategory = ({ filter, setFilter }) => {
                     onChange={handleCategoryChange}
                 >
                     <option value="">Sort By Category</option>
-                    {Array.from(new Set(Products?.map((Product) => Product.Category))).map((category) => (
+                    {Array.from(new Set(Products?.map((Product) => Product.category))).map((category) => (
                         <option key={category} value={category}>
                             {category}
                         </option>

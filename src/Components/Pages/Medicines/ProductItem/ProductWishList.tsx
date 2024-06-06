@@ -1,6 +1,5 @@
 import React from 'react';
 import UseAuth from '../../../../Hook/UseAuth.tsx';
-// import Cart from '../../../../assets/Icons/Cart.tsx';
 import { uuidv4 } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
@@ -13,9 +12,9 @@ const MedWishList = () => {
     // const [, refetch] = UseCart();
 
     const { data: wishList = [], refetch } = useQuery({
-        queryKey: ['Medicines', user?.email],
+        queryKey: ['products', user?.email],
         queryFn: async () => {
-            const res = await AxiousPublic.get(`/Medicines?email=${user?.email}`);
+            const res = await AxiousPublic.get(`/products?email=${user?.email}`);
             return res.data;
         }
     });
@@ -78,11 +77,11 @@ const MedWishList = () => {
                     ?.filter((item) => item.wishList === true)
                     ?.map((item) => (
                         <div key={item?._id} className="flex flex-row items-center gap-8 sm:min-w-[500px] space-y-4 md:space-y-0 md:space-x-4 border-b pb-2 my-2 ">
-                            <img alt="T-shirt" className="w-16 h-16 bg-gray-200 rounded object-cover" src={item?.Image} />
+                            <img alt="T-shirt" className="w-16 h-16 bg-gray-200 rounded object-cover" src={item?.image} />
                             <div>
-                                <h3 className="font-semibold text-sm sm:text-base md:text-lg lg:text-xl">{item?.Medname}</h3>
-                                <p className="md:text-sm sm:text-[14px] text-[12px]  text-gray-600">Category: {item?.Category}</p>
-                                <p className="md:text-sm sm:text-[14px] text-[12px] text-gray-600">Seller: {item?.Company}</p>
+                                <h3 className="font-semibold text-sm sm:text-base md:text-lg lg:text-xl">{item?.name}</h3>
+                                <p className="md:text-sm sm:text-[14px] text-[12px]  text-gray-600">Category: {item?.category}</p>
+                                <p className="md:text-sm sm:text-[14px] text-[12px] text-gray-600">Seller: {item?.company}</p>
                                 <div className="flex space-x-2 mt-3">
                                     <button
                                         onClick={() => handleRemove(item?._id)}

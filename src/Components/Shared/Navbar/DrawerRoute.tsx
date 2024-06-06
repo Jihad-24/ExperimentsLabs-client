@@ -29,35 +29,8 @@ const DrawerRoute = () => {
                     </li>
 
                     <li>
-                        <Link to="/about" className="block py-2 px-4 hover:text-[#0360D9]">
-                            About Us
-                        </Link>
-                    </li>
-
-                    <li>
                         <Link to="/Products" className="block py-2 px-4 hover:text-[#0360D9]">
                             Products
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link to="/contact" className="block py-2 px-4 hover:text-[#0360D9]">
-                            Contact
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/forum" className="block py-2 px-4 hover:text-[#0360D9]">
-                            Forum
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/blogs" className="block py-2 px-4 hover:text-[#0360D9]">
-                            Blog
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/doctors" className="block py-2 px-4 hover:text-[#0360D9]">
-                            Doctors
                         </Link>
                     </li>
                 </ul>

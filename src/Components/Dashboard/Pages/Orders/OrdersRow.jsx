@@ -7,7 +7,7 @@ const OrdersRow = ({ user, handleDeleteOrder, ChangeOrderStatus }) => {
     const productName = Products?.map((Product) => (
         <p className="w-40" key={Product?._id}>
            {/* { console.log('Product',Product)} */}
-            {Product?.medicine?.Medname}
+            {Product?.Product?.name}
         </p>
     ));
 
