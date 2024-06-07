@@ -21,7 +21,7 @@ const OrdersRow = ({ user, handleDeleteOrder, ChangeOrderStatus }) => {
             </td>
             <td className="border-t px-6 py-4 text-center">{productName}</td>
             <td className="border-t px-6 py-4 text-center">{Products?.length}</td>
-            <td className="border-t px-6 py-4 text-center">{status}</td>
+            <td className="border-t px-6 py-4 text-center">{status ? status : 'Pending'}</td>
             <td className="px-6 py-4 border-t text-center">
                 <button onClick={() => ChangeOrderStatus(user, 'Processing')} className="text-2xl flex justify-center flex-col md:flex-row gap-5 text-blue-700 lg:ml-11">
                     <AiOutlineCheck />

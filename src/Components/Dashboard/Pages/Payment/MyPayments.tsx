@@ -2,75 +2,48 @@ import React from 'react';
 import UseAxiosPublic from '../../../../Hook/UseAxiosPublic.tsx';
 import { useQuery } from '@tanstack/react-query';
 import UseAuth from '../../../../Hook/UseAuth.tsx';
-import MyOrderRow from './MyOrderRow.tsx';
+import MyOrderRow from './MyPaymentRow.tsx';
 import Swal from 'sweetalert2';
 
-const MyOrder = () => {
+const MyPayments = () => {
     const axiosPublic = UseAxiosPublic()
     const { user } = UseAuth()
 
-    const { data: orders = [], refetch, isLoading } = useQuery({
-        queryKey: ['orders'],
+    const { data: payments = [], refetch, isLoading } = useQuery({
+        queryKey: ['payments'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/order/${user?.email}`);
+            const res = await axiosPublic.get(`/payments/${user?.email}`);
             return res.data;
         }
     });
 
-
-
-
-    const handleDeleteMyOrder = (id) => {
-        // console.log(id);
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                axiosPublic.delete(`/order/${id}`).then((res) => {
-                    Swal.fire({
-                        title: 'Deleted!',
-                        text: 'Your Order has been deleted.',
-                        icon: 'success'
-                    });
-                    refetch();
-                });
-            }
-        });
-    };
-    console.log(orders);
+    // console.log(payments);
     return (
         <>
             <div className="mt-5 ml-3 md:ml-0 md:my-5">
-                <h1 className="text-2xl font-semibold">My Orders</h1>
-                <p>Explore and mange All your Orders effortlessly in one place.</p>
+                <h1 className="text-2xl font-semibold">My payments</h1>
+                <p>Explore and mange All your payments effortlessly in one place.</p>
             </div>
             {!isLoading ? (
-                orders?.length ? (
+                payments?.length ? (
                     <div className="md:pt-0 pt-8 md:ml-4">
                         <div className="overflow-x-auto w-full rounded-lg">
                             <table className="table w-full ">
                                 <thead className="bg-[#fafafad5] h-12 md:h-14 text-black text-sm lg:text-lg ">
                                     <tr className="text-center">
-                                        <th> Order No</th>
+                                        <th> Payment No</th>
                                         {/* <th> Name</th> */}
-                                        <th> Mobile</th>
-                                        <th>Order Address</th>
+                                        <th> Email Address</th>
+                                        <th>Total Amount</th>
                                         <th >Status</th>
                                         
-                                        <th className="text-center">Delete</th>
 
                                         {/* <th className="text-center">Cancel</th> */}
                                     </tr>
                                 </thead>
                                 <tbody className="bg-base-300 text-center">
-                                    {orders?.map((order) => (
-                                        <MyOrderRow key={order?._id} order={order} handleDeleteMyOrder={handleDeleteMyOrder} ></MyOrderRow>
+                                    {payments?.map((payment) => (
+                                        <MyOrderRow key={payment?._id} payment={payment}  ></MyOrderRow>
                                     ))}
                                 </tbody>
                             </table>
@@ -122,4 +95,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default MyPayments;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaHome, FaUserCircle } from 'react-icons/fa';
+import { FaMoneyCheckDollar } from 'react-icons/fa6';
 import { GiRemedy } from 'react-icons/gi';
 import { LuFileStack } from 'react-icons/lu';
 import { MdOutlineNotificationsActive, MdProductionQuantityLimits } from 'react-icons/md';
@@ -46,6 +47,10 @@ const DashboardLayout = () => {
                             <NavLink to="/dashboard/myorder" className=" flex gap-1 items-center hover:scale-105 overflow-hidden hover:bg-[#2c7feb] p-2 rounded-2xl transition-all duration-200">
                                 <MdProductionQuantityLimits /> My Order
                             </NavLink>
+                            <NavLink to="/dashboard/payment" className=" flex gap-1 items-center hover:scale-105 overflow-hidden hover:bg-[#2c7feb] p-2 rounded-2xl transition-all duration-200">
+                                <FaMoneyCheckDollar />
+                                My Payment's
+                            </NavLink>
                         </>
                     ) : (
                         <>
@@ -61,6 +66,9 @@ const DashboardLayout = () => {
                             </NavLink>
 
                             <NavLink to="/dashboard/myorder" className=" flex justify-center hover:scale-105 overflow-hidden hover:bg-[#2c7feb] px-2 py-3 rounded-2xl transition-all duration-200">
+                                <MdProductionQuantityLimits />
+                            </NavLink>
+                            <NavLink to="/dashboard/payment" className=" flex justify-center hover:scale-105 overflow-hidden hover:bg-[#2c7feb] px-2 py-3 rounded-2xl transition-all duration-200">
                                 <MdProductionQuantityLimits />
                             </NavLink>
                         </>

@@ -5,8 +5,8 @@ const Banner = () => {
     return (
         <div className="mb-[110px] bg-[#E1EEFF]">
             <Container>
-                <div className="lg:flex justify-around relative items-center pb-5 gap-5">
-                    <div className="px-1 md:px-5 lg:px-0">
+                <div className="lg:flex justify-around relative items-center  gap-5">
+                    <div className="px-1 md:px-5 lg:px-0 pb-5">
                         <h1 className="lg:text-6xl mb-3 text-3xl font-bold">
                             Find & Search Your <br />
                             <span className="text-[#0360D9]">Constituent</span> Product
@@ -23,7 +23,7 @@ const Banner = () => {
                         </div>
                     </div>
 
-                    <div>
+                    <div className='pb-5'>
                         <img className=" w-[798px]  h-auto border border-[#0360D9] rounded-md" src="/Asset/Banner/istockphoto-1190440285-612x612.jpg" alt="" />
                     </div>
                 </div>

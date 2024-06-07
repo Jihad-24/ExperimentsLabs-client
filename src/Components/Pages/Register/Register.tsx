@@ -6,7 +6,7 @@ import loginAnimation from './../Login/login.json';
 
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { base_URL } from '../../../utills/BaseURL.ts';
+import UseAxiosPublic from '../../../Hook/UseAxiosPublic.tsx';
 
 const image_hosting_key = '140f2d0db1502e65c2c0ee7bfc66be98';
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -14,6 +14,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const Register = () => {
     const { createUser, updateUser, signInWithGoogle } = UseAuth();
     const registerNavi = useNavigate();
+    const axiosPublic = UseAxiosPublic();
 
     const {
         register,
@@ -53,7 +54,7 @@ const Register = () => {
                         email: data.email,
                         imageURL: imageUrl
                     };
-                    axios.post(`${base_URL}/User`, userInfo).then((res) => {
+                    axiosPublic.post(`/users`, userInfo).then((res) => {
                         console.log(res);
                         if (res.statusText === 'OK') {
                             console.log('user added to the database');
@@ -80,7 +81,7 @@ const Register = () => {
                     email: result.user.email,
                     imageURL: result.user.photoURL
                 };
-                axios.post(`${base_URL}/User`, userInfo).then((res) => {
+                axiosPublic.post(`/users`, userInfo).then((res) => {
                     console.log(res);
                     if (res.statusText === 'OK') {
                         console.log('user added to the database');

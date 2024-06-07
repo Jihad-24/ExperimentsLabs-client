@@ -6,12 +6,12 @@ import { getAuth} from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC994LbAyhVFpLjKCXHb9Ns5kGI4P73ygg",
-  authDomain: "medcarehub-52d59.firebaseapp.com",
-  projectId: "medcarehub-52d59",
-  storageBucket: "medcarehub-52d59.appspot.com",
-  messagingSenderId: "606610522486",
-  appId: "1:606610522486:web:d96ff6505aa5e4a1397a57"
+  apiKey: "AIzaSyADEMzXTDAY3mvgP69c5KFf2-sbhxVC2_8",
+  authDomain: "experimentslabs-2ea3f.firebaseapp.com",
+  projectId: "experimentslabs-2ea3f",
+  storageBucket: "experimentslabs-2ea3f.appspot.com",
+  messagingSenderId: "732586093992",
+  appId: "1:732586093992:web:04d3c246ef31741036419d"
 };
 
 // Initialize Firebase

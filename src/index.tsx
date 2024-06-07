@@ -22,6 +22,7 @@ import { ProductProvider } from './Components/Pages/Medicines/ProductContext/Pro
 import Products from './Components/Pages/Medicines/Products.tsx';
 import MedWishList from './Components/Pages/Medicines/ProductItem/ProductWishList.tsx';
 import Payment from './Components/Pages/Payment/Payment.tsx';
+import MyPayments from './Components/Dashboard/Pages/Payment/MyPayments.tsx';
 
 const queryClient = new QueryClient();
 
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/myorder',
                 element: <MyOrder></MyOrder>
+            },
+            {
+                path: '/dashboard/payment',
+                element: <MyPayments></MyPayments>
             }
         ]
     }

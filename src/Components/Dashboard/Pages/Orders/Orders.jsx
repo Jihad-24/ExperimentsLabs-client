@@ -13,11 +13,11 @@ const Orders = () => {
     } = useQuery({
         queryKey: ['orders'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/orders`);
+            const res = await axiosPublic.get(`/order`);
             return res.data;
         }
     });
-    // console.log(orders[0]);
+    console.log('orders',orders);
 
     const handleDeleteOrder = (id) => {
         // console.log(id);
@@ -45,9 +45,9 @@ const Orders = () => {
 
     const ChangeOrderStatus = (user, status) => {
         console.log(user);
-        axiosPublic.patch(`order/status/${user?._id}`, { status }).then((res) => {
+        axiosPublic.patch(`/order/status/${user?._id}`, { status }).then((res) => {
             console.log(res);
-            if (res.data.status) {
+            if (res.data) {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
