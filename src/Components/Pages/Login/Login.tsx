@@ -69,7 +69,7 @@ const Login: FC = () => {
 
                     .then((res) => {
                         console.log(res);
-                        if (res.statusText === 'OK') {
+                        if (res) {
                             console.log('user added to the database');
 
                             Swal.fire({

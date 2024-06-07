@@ -56,7 +56,7 @@ const Register = () => {
                     };
                     axiosPublic.post(`/users`, userInfo).then((res) => {
                         console.log(res);
-                        if (res.statusText === 'OK') {
+                        if (res) {
                             console.log('user added to the database');
                             reset();
                             Swal.fire({
@@ -83,7 +83,7 @@ const Register = () => {
                 };
                 axiosPublic.post(`/users`, userInfo).then((res) => {
                     console.log(res);
-                    if (res.statusText === 'OK') {
+                    if (res) {
                         console.log('user added to the database');
                         reset();
                         Swal.fire({
