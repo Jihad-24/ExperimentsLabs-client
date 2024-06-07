@@ -13,7 +13,7 @@ const SideContent = () => {
 
     useEffect(() => {
         setISLoading(true);
-        fetch('http://localhost:5001/products')
+        fetch('https://experiments-labs-server.vercel.app/products')
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data);

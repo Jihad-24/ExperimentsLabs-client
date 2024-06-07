@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5001'
-})
+    baseURL: 'https://experiments-labs-server.vercel.app'
+});
 const UseAxiosPublic = () => {
-    return axiosPublic
-}
+    return axiosPublic;
+};
 
 export default UseAxiosPublic;
