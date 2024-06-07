@@ -40,12 +40,6 @@ const ProductItem = ({ filter }) => {
         } else {
             setFavorites([...favorites, id]);
         }
-        AxiousPublic.put(`/ProductWish/${id}`)
-            .then((res) => {
-                console.log(res);
-                Swal.fire('You added this in your wish List');
-            })
-            .catch((error) => console.error('Error updating status:', error));
     };
 
     const { data: ProductData = [], isLoading } = useQuery({

@@ -14,7 +14,7 @@ const MedWishList = () => {
     const { data: wishList = [], refetch } = useQuery({
         queryKey: ['products', user?.email],
         queryFn: async () => {
-            const res = await AxiousPublic.get(`/products?email=${user?.email}`);
+            const res = await AxiousPublic.get(`/products/${user?.email}`);
             return res.data;
         }
     });
